@@ -27,8 +27,8 @@ module.exports = [
         options: {
             validate: {
                 payload: Joi.object({
-                    nome: Joi.string().min(5).max(50).required(),
-                    idade: Joi.number().required()
+                    livro: Joi.string().min(5).max(50).required(),
+                    author: Joi.string().min(3).max(50).required()
                 })
             }
         }

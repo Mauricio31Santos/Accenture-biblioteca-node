@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "M8B7D3s6",
+    "database": "db_aula",
+    "host": "localhost",
+    "dialect": "postgres",
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "freezeTableName": true
+      
+    }
+  }
+}
+  

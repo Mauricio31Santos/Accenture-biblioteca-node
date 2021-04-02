@@ -3,6 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const dotenv = require('dotenv')
 const Routes = require('./routes')
+const db = require("./db");
 
 dotenv.config()
 
