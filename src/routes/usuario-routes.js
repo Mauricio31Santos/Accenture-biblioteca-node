@@ -27,7 +27,7 @@ module.exports = [
         options: {
             validate: {
                 payload: Joi.object({
-                    usuario: Joi.string().min(5).max(50).required(),
+                    usuario: Joi.string().min(3).max(50).required(),
                     senha: Joi.string().min(8).max(20).required(),
                 })
             }
@@ -43,7 +43,7 @@ module.exports = [
                     id: Joi.string().guid().required()
                 }),
                 payload: Joi.object({
-                    usuario: Joi.string().min(5).max(50).required(),
+                    usuario: Joi.string().min(3).max(50).required(),
                     senha: Joi.string().min(8).max(20).required(),
                 })
             }
