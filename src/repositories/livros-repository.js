@@ -1,6 +1,6 @@
 const BaseRepository = require("./base-repository");
 
-class CadastrolivrosRepository extends BaseRepository{
+class LivrosRepository extends BaseRepository{
 
     constructor(){
         super()
@@ -8,4 +8,4 @@ class CadastrolivrosRepository extends BaseRepository{
 
 }
 
-module.exports = CadastrolivrosRepository
+module.exports = LivrosRepository
