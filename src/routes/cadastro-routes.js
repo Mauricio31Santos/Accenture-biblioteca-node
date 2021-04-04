@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("joi")//.extend(require('joi-cpf'));
 const CadastroHandler = require("../handlers/cadastro-handler");
 
 module.exports = [
@@ -29,9 +29,9 @@ module.exports = [
                 payload: Joi.object({
                     nome: Joi.string().min(3).max(50).required(),
                     cpf: Joi.string().min(11).max(11).required(),
+                    //cpf: Joi.document().cpf().required(),
                     telefone: Joi.string().min(11).max(11).required(),
-                    
-                    
+                                   
                 })
             }
         }
@@ -48,6 +48,7 @@ module.exports = [
                 payload: Joi.object({
                     nome: Joi.string().min(3).max(50).required(),
                     cpf: Joi.string().min(1).max(1).required(),
+                    //cpf: Joi.document().cpf().required(),
                     telefone: Joi.string().min(1).max(1).required(),
                 })
             }
