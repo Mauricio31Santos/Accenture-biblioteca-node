@@ -26,8 +26,10 @@
     "@hapi/joi-date": "^2.0.1",
     "@joi/date": "^2.1.0",
     "composer": "^4.1.0",
+    "cpf-cnpj-validator": "^1.0.3",
     "dotenv": "^8.2.0",
     "joi": "^17.4.0",
+    "joi-cpf-cnpj": "^0.1.0",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2"
