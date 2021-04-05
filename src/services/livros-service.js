@@ -7,6 +7,9 @@ class LivrosService extends BaseService {
     constructor(){
         super(new LivrosRepository())
     }
+    async getById(id){
+        return await super.getById(id, ['cadastro'])
+    }
 }
 
 module.exports = LivrosService

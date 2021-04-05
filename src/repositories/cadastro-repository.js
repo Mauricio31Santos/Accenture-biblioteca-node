@@ -1,10 +1,10 @@
-//const CadastroModel = require('../database/models/cadastro-model')
+const CadastroModel = require('../database/models/cadastro-model')
 const BaseRepository = require('./base-repository')
 
 class CadastroRepository extends BaseRepository {
 
     constructor(){
-        super()
+        super(CadastroModel)
     }
 }
 

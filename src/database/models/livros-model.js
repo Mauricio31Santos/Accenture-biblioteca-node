@@ -1,4 +1,4 @@
-/*const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const CadastroModel = require("./cadastro-model");
 
 class LivrosModel extends Model {
@@ -33,4 +33,4 @@ class LivrosModel extends Model {
 
 }
 
-module.exports = LivrosModel*/
+module.exports = LivrosModel

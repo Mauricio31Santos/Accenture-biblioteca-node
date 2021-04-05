@@ -47,9 +47,9 @@ module.exports = [
                 }),
                 payload: Joi.object({
                     nome: Joi.string().min(3).max(50).required(),
-                    cpf: Joi.string().min(1).max(1).required(),
+                    cpf: Joi.string().min(11).max(11).required(),
                     //cpf: Joi.document().cpf().required(),
-                    telefone: Joi.string().min(1).max(1).required(),
+                    telefone: Joi.string().min(11).max(11).required(),
                 })
             }
         }
@@ -65,5 +65,21 @@ module.exports = [
                 })
             }
         }
+    },
+    {
+        method: 'PATCH',
+        path: '/api/v1/cadastro/{id}',
+        handler: CadastroHandler.changeStatus,
+        options: {
+            validate: {
+                params: Joi.object({
+                    id: Joi.string().guid().required()
+                }),
+                payload: Joi.object({
+                    active: Joi.boolean().required()
+                })
+            }
+        }
     }
+ 
 ]
