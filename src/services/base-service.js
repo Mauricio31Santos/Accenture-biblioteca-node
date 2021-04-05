@@ -1,28 +1,43 @@
+const { v4: uuidv4 } = require('uuid');
+const { query } = require("../database")
+
 class BaseService{
 
     constructor(repository){
         this.repository = repository
     }
 
-    getAll(){
-        return this.repository.getAll()
+    async getAll(){
+
+        if(query.active) query.ative = query.active == "true"
+
+        return await this.repository.getAll(query)
+
+    }
+    async getById(id, include){
+        return await this.repository.getById(id, include )
     }
 
-    getById(id){
-        return this.repository.getById(id)
+    async add(payload){
+
+        payload.id = uuidv4()
+
+        return await this.repository.add(payload)
     }
 
-    add(payload){
-        return this.repository.add(payload)
+    async update(id, payload){
+        return await this.repository.update(id, payload)
     }
 
-    update(id, payload){
-        return this.repository.update(id, payload)
+    async remove(id){
+        return await this.repository.remove(id)
     }
 
-    remove(id){
-        return this.repository.remove(id)
+    async changeStatus(id, status){
+        return await this.repository.changeStatus(id, status)
     }
+
+
 }
 
 module.exports = BaseService

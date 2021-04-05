@@ -4,34 +4,7 @@ services:
 
   #### MONGODB
 
-  #banco de dados não relacional
-  mongo:
-    image: mongo
-    restart: always
-    container_name: gama_mongodb
-    ports:
-      - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: 
-      MONGO_INITDB_ROOT_PASSWORD: 
-
-  #interface web para administração do mongodb
-  admin_mongo:
-    image: mrvautin/adminmongo
-    container_name: gama_admin_mongo
-    restart: always
-    ports:
-      - 9080:1234
-    environment:
-      - HOST=0.0.0.0      
-      - CONN_NAME=gama_mongo
-      - DB_USERNAME=
-      - DB_PASSWORD=
-      - DB_HOST=mongo
-      - DB_PORT=27017
-    depends_on:
-      - mongo
-
+  
   #### POSTGRESS
 
   # banco de dados relacional
