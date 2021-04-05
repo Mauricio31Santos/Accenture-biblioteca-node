@@ -1,25 +1,53 @@
-class BaseRepository{
+class BaseRepository {
 
-    getAll(){
-        return { hello : 'world' }
+    constructor(model) {
+        this.model = model
     }
 
-    getById(id){
-        return { hello : id }
+    async getAll(query) {
+        console.log(query)
+
+        return await this.model.findAll({ where: { ...query }})
     }
 
-    add(entity){
-        return { hello : entity }
+    async getById(id, include) {
+        return await this.model.findByPk(id, { include })
     }
 
-    update = (id, entity) => {
-        return { hello : { id, entity } }
+    async add(entity) {
+        return await this.model.create(entity)
     }
 
-    remove = (id) => {
-        return { hello : id }
+    async update(id, entity) {
+
+        const result = await this.getById(id)
+
+        Object.assign(result, entity)
+
+        await result.save()
+
+        return result
     }
 
+    async remove(id){
+
+        const result = await this.getById(id)
+
+        await result.destroy()
+
+        return { id, removed: true }
+    }
+
+    async changeStatus(id, status) {
+
+        const result = await this.getById(id)
+
+        result.active = status
+
+        await result.save()
+
+        return result
+    }
 }
 
 module.exports = BaseRepository
