@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const CadastroModel = require("./cadastro-model");
+//const CadastroModel = require("./cadastro-model");
 
 class LivrosModel extends Model {
 
@@ -28,7 +28,7 @@ class LivrosModel extends Model {
     }
 
     static associate(models){
-        this.belongsTo(models.CadastroModel,{ foreignKey: 'cadastro_id', as: 'cadastro' } )
+        this.belongsTo(models.CadastroModel, { foreignKey: 'cadastro_id', as: 'cadastro' } )
     }
 
 }
