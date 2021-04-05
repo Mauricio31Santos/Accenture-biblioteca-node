@@ -1,4 +1,4 @@
-/*const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const LivrosModel = require("./livros-model");
 
 class CadastroModel extends Model{
@@ -29,8 +29,9 @@ class CadastroModel extends Model{
     }
 
     static associate(models){
-        this.hasMany(models.livrosModel, { foreignKey: 'cadastro_id', as:'livros'})
-    }
+        
+       // this.hasMany(models.livrosModel, { foreignKey: 'cadastro_id', as:'livros'})
+        }
 }
 
-module.exports = CadastroModel*/
+module.exports = CadastroModel

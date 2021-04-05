@@ -1,5 +1,5 @@
 const BaseService = require('./base-service')
-CadastroRepository = require("../repositories/cadastro-repository")
+const CadastroRepository = require("../repositories/cadastro-repository")
 
 class CadastroService extends BaseService{
     

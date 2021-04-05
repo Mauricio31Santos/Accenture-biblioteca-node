@@ -60,5 +60,21 @@ module.exports = [
                 })
             }
         }
+    },
+        {
+            method: 'PATCH',
+            path: '/api/v1/usuario/{id}',
+            handler: UsuarioHandler.changeStatus,
+            options: {
+                validate: {
+                    params: Joi.object({
+                        id: Joi.string().guid().required()
+                    }),
+                    payload: Joi.object({
+                        active: Joi.boolean().required()
+                    })
+                }
+            }
+        
     }
 ]

@@ -1,5 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
-const { query } = require("../database")
+
 
 class BaseService{
 
@@ -7,14 +7,16 @@ class BaseService{
         this.repository = repository
     }
 
-    async getAll(){
+    async getAll(query){
 
-        if(query.active) query.ative = query.active == "true"
+        if(query.active) query.active = query.active == "true"
 
         return await this.repository.getAll(query)
 
     }
+
     async getById(id, include){
+
         return await this.repository.getById(id, include )
     }
 
@@ -26,6 +28,7 @@ class BaseService{
     }
 
     async update(id, payload){
+
         return await this.repository.update(id, payload)
     }
 

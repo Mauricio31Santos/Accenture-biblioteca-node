@@ -30,6 +30,7 @@ module.exports = [
                     livro: Joi.string().min(5).max(50).required(),
                     author: Joi.string().min(3).max(50).required(),
                     dataLocacao: Joi.date().format('YYYY-MM-DD').utc().required(),
+                    cadastro_id: Joi.string().guid().required()
                     //dataDevolucao: Joi.date().required()
                 })
             }
@@ -49,6 +50,7 @@ module.exports = [
                     livro: Joi.string().min(5).max(50).required(),
                     author: Joi.string().min(3).max(50).required(),
                     dataLocacao: Joi.date().format('YYYY-MM-DD').utc().required(),
+                    cadastro_id: Joi.string().guid().required()
                 })
             }
         }
@@ -61,6 +63,21 @@ module.exports = [
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required()
+                })
+            }
+        }
+    },
+    {
+        method: 'PATCH',
+        path: '/api/v1/livros/{id}',
+        handler: LivrosHandler.changeStatus,
+        options: {
+            validate: {
+                params: Joi.object({
+                    id: Joi.string().guid().required()
+                }),
+                payload: Joi.object({
+                    active: Joi.boolean().required()
                 })
             }
         }
