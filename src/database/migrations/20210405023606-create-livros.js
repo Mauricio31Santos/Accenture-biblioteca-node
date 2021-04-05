@@ -10,7 +10,7 @@ module.exports = {
           allowNull: false,
           primaryKey: true,
         },
-        livro: {
+        livros: {
           type: Sequelize.STRING,
           allowNull: false,
           unique: true

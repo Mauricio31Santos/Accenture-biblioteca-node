@@ -5,7 +5,7 @@
 # Cadastro
     - Endereço 
     - relacionar cadastro de pessoas com os livros
-    - relacionar o cadastro de pessoas com o endereço
+    - 
     
 
 

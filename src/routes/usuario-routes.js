@@ -6,13 +6,21 @@ module.exports = [
     {
         method: 'GET',
         path: '/api/v1/usuario',
-        handler: UsuarioHandler.getAll
+        options: {
+            handler: UsuarioHandler.getAll,
+            description: 'Obtem todos os usuarios',
+            notes: 'Retorna todos os usuario',
+            tags: ['api','usuario'], // ADD THIS TAG
+        }
     },
     {
         method: 'GET',
         path: '/api/v1/usuario/{id}',
-        handler: UsuarioHandler.getById,
         options: {
+            handler: UsuarioHandler.getById,
+            description: 'Obtem um usuario pelo id',
+            notes: 'Retorna um um usuario pelo id',
+            tags: ['api','usuario'], // ADD THIS TAG
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required(),
@@ -23,8 +31,11 @@ module.exports = [
     {
         method: 'POST',
         path: '/api/v1/usuario',
-        handler: UsuarioHandler.add,
         options: {
+            handler: UsuarioHandler.add,
+            description: 'Obtem um usuario pelo id',
+            notes: 'Retorna um um usuario pelo id',
+            tags: ['api','usuario'], // ADD THIS TAG
             validate: {
                 payload: Joi.object({
                     usuario: Joi.string().min(3).max(50).required(),
@@ -36,8 +47,11 @@ module.exports = [
     {
         method: 'PUT',
         path: '/api/v1/usuario/{id}',
-        handler: UsuarioHandler.update,
         options: {
+            handler: UsuarioHandler.update,
+            description: 'Obtem um usuario pelo id',
+            notes: 'Retorna um um usuario pelo id',
+            tags: ['api','usuario'], // ADD THIS TAG
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required()
@@ -52,8 +66,11 @@ module.exports = [
     {
         method: 'DELETE',
         path: '/api/v1/usuario/{id}',
-        handler: UsuarioHandler.remove,
         options: {
+            handler: UsuarioHandler.remove,
+            description: 'Obtem um usuario pelo id',
+            notes: 'Retorna um um usuario pelo id',
+            tags: ['api','usuario'], // ADD THIS TAG
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required()
@@ -64,8 +81,11 @@ module.exports = [
         {
             method: 'PATCH',
             path: '/api/v1/usuario/{id}',
-            handler: UsuarioHandler.changeStatus,
             options: {
+                handler: UsuarioHandler.changeStatus,
+                description: 'Obtem um usuario pelo id',
+                notes: 'Retorna um um usuario pelo id',
+                tags: ['api','usuario'], // ADD THIS TAG
                 validate: {
                     params: Joi.object({
                         id: Joi.string().guid().required()

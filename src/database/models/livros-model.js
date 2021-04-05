@@ -10,7 +10,7 @@ class LivrosModel extends Model {
                 type: DataTypes.UUIDV4,
                 primaryKey: true
             },
-            livro: {
+            livros: {
                 type: DataTypes.STRING,
             },
             author: {

@@ -6,13 +6,21 @@ module.exports = [
     {
         method: 'GET',
         path: '/api/v1/livros',
-        handler: LivrosHandler.getAll
+        options: {
+            handler: LivrosHandler.getAll,            
+            description: 'Obtem o todos os livros',
+            notes: 'Retorna uma lista de livros',
+            tags: ['api','livros'], // ADD THIS TAG
+        }
     },
     {
         method: 'GET',
         path: '/api/v1/livros/{id}',
-        handler: LivrosHandler.getById,
         options: {
+            handler: LivrosHandler.getById,
+            description: 'Obtem o livros pelo id',
+            notes: 'Retorna um livro pelo id',
+            tags: ['api','livros'], // ADD THIS TAG
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required()
@@ -23,8 +31,11 @@ module.exports = [
     {
         method: 'POST',
         path: '/api/v1/livros',
-        handler: LivrosHandler.add,
         options: {
+            handler: LivrosHandler.add,
+            description: 'Adciona um novo livro',
+            notes: 'Retorna uma lista de livros',
+            tags: ['api','livros'], // ADD THIS TAG
             validate: {
                 payload: Joi.object({
                     livro: Joi.string().min(5).max(50).required(),
@@ -40,9 +51,11 @@ module.exports = [
     {
         method: 'PUT',
         path: '/api/v1/livros/{id}',
-        handler: LivrosHandler.update,
-        
         options: {
+            handler: LivrosHandler.update,
+            description: 'Atualiza os livros pelo id',
+            notes: 'Retorna uma lista de livros atualizadas',
+            tags: ['api','livros'], // ADD THIS TAG
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required()
@@ -59,8 +72,11 @@ module.exports = [
     {
         method: 'DELETE',
         path: '/api/v1/livros/{id}',
-        handler: LivrosHandler.remove,
         options: {
+            handler: LivrosHandler.remove,
+            description: 'remove um livro pelo id',
+            notes: 'Retorna uma lista de livros',
+            tags: ['api','livros'], // ADD THIS TAG
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required()
@@ -71,8 +87,11 @@ module.exports = [
     {
         method: 'PATCH',
         path: '/api/v1/livros/{id}',
-        handler: LivrosHandler.changeStatus,
         options: {
+            handler: LivrosHandler.changeStatus,
+            description: 'Obtem um lista de livros inativada',
+            notes: 'Retorna uma lista de livros',
+            tags: ['api','livros'], // ADD THIS TAG
             validate: {
                 params: Joi.object({
                     id: Joi.string().guid().required()

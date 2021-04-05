@@ -6,7 +6,7 @@ class LivrosRepository extends BaseRepository{
     constructor(){
         super(LivrosModel)
     }
-    add = (req, h) =>{
+   add = (req, h) =>{
 
         return req.payload
         
