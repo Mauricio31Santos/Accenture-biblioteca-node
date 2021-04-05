@@ -20,7 +20,7 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        data_locacao: {
+        dataLocacao: {
           type: Sequelize.DATE,
           allowNull: false,
         },

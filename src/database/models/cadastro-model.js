@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const LivrosModel = require("./livros-model");
+//const LivrosModel = require("./livros-model");
 
 class CadastroModel extends Model{
 
