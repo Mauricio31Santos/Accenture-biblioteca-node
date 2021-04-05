@@ -10,19 +10,21 @@ module.exports = {
           allowNull: false,
           primaryKey: true,
         },
-        livros: {
+        livro: {
           type: Sequelize.STRING,
           allowNull: false,
           unique: true
+          
         },
         author: {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        datalocacao: {
-          type: Sequelize.STRING,
+        data_locacao: {
+          type: Sequelize.DATE,
           allowNull: false,
         },
+       
         cadastro_id:{
           type: Sequelize.UUID,
           references:{ model: 'cadastro', key:'id' },

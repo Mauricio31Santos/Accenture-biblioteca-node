@@ -31,11 +31,12 @@ module.exports = [
                     author: Joi.string().min(3).max(50).required(),
                     dataLocacao: Joi.date().format('YYYY-MM-DD').utc().required(),
                     cadastro_id: Joi.string().guid().required()
-                    //dataDevolucao: Joi.date().required()
+                    
                 })
             }
         }
     },
+    
     {
         method: 'PUT',
         path: '/api/v1/livros/{id}',

@@ -1,6 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
 
-
 class BaseService{
 
     constructor(repository){
@@ -12,11 +11,9 @@ class BaseService{
         if(query.active) query.active = query.active == "true"
 
         return await this.repository.getAll(query)
-
     }
 
     async getById(id, include){
-
         return await this.repository.getById(id, include )
     }
 
@@ -28,7 +25,6 @@ class BaseService{
     }
 
     async update(id, payload){
-
         return await this.repository.update(id, payload)
     }
 
@@ -39,8 +35,6 @@ class BaseService{
     async changeStatus(id, status){
         return await this.repository.changeStatus(id, status)
     }
-
-
 }
 
 module.exports = BaseService
