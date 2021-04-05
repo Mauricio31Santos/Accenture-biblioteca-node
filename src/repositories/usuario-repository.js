@@ -6,6 +6,9 @@ class UsuarioRepository extends BaseRepository{
     constructor(){
         super(UsuarioModel)
     }
+    async getByUsername(usuario){
+        return await UsuarioModel.findOne({ where: { usuario }})
+    }
 }
 
 module.exports = UsuarioRepository
