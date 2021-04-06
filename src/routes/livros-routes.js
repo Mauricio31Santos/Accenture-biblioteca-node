@@ -1,4 +1,4 @@
-const Joi = require("joi").extend(require('@joi/date'));
+const Joi = require("joi")//.extend(require('@joi/date'));
 const LivrosHandler = require("../handlers/livros-handler");
 
 module.exports = [
@@ -38,9 +38,9 @@ module.exports = [
             tags: ['api','livros'], // ADD THIS TAG
             validate: {
                 payload: Joi.object({
-                    livro: Joi.string().min(5).max(50).required(),
+                    titulo: Joi.string().min(5).max(50).required(),
                     author: Joi.string().min(3).max(50).required(),
-                    dataLocacao: Joi.date().format('YYYY-MM-DD').utc().required(),
+                    //dataLocacao: Joi.date().format('YYYY-MM-DD').utc().required(),
                     cadastro_id: Joi.string().guid().required()
                     
                 })
@@ -61,9 +61,9 @@ module.exports = [
                     id: Joi.string().guid().required()
                 }),
                 payload: Joi.object({
-                    livro: Joi.string().min(5).max(50).required(),
+                    titulo: Joi.string().min(5).max(50).required(),
                     author: Joi.string().min(3).max(50).required(),
-                    dataLocacao: Joi.date().format('YYYY-MM-DD').utc().required(),
+                    //dataLocacao: Joi.date().format('YYYY-MM-DD').utc().required(),
                     cadastro_id: Joi.string().guid().required()
                 })
             }

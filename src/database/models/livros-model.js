@@ -10,15 +10,18 @@ class LivrosModel extends Model {
                 type: DataTypes.UUIDV4,
                 primaryKey: true
             },
-            livros: {
+            titulo: {
                 type: DataTypes.STRING,
             },
             author: {
                 type: DataTypes.STRING,
             },
-            dataLocacao: {
+            /*dataLocacao: {
                 type: DataTypes.DATE,
-            },
+            },*/
+            //cadastro_id: {
+            //    type: DataTypes.STRING,
+           // },
             active: {
                 type: DataTypes.BOOLEAN,
             }

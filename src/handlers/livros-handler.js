@@ -7,12 +7,12 @@ class LivrosHandler extends BaseHandler{
     constructor(){
         super(new LivrosService())
     }
-    add = (req, h) =>{
+    /*add = (req, h) =>{
 
-        return req.payload
+        return req.params
         
     
-    }
+    }*/
     
 }
 
