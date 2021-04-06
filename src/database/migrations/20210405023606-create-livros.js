@@ -10,7 +10,7 @@ module.exports = {
           allowNull: false,
           primaryKey: true,
         },
-        livros: {
+        titulo: {
           type: Sequelize.STRING,
           allowNull: false,
           unique: true
@@ -20,10 +20,10 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        dataLocacao: {
+        /*dataLocacao: {
           type: Sequelize.DATE,
           allowNull: false,
-        },
+        },*/
        
         cadastro_id:{
           type: Sequelize.UUID,
